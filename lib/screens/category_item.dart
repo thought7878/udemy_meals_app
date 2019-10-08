@@ -9,13 +9,15 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id, this.title, this.color);
 
   void tapItem(BuildContext ct) {
-    Navigator.of(ct).push(
-      MaterialPageRoute(
-        builder: (_) {
-          return CategoryMealsScreen(id, title);
-        },
-      ),
-    );
+    Navigator.of(ct)
+        .pushNamed('/category_meals', arguments: {'id': id, 'title': title});
+    // Navigator.of(ct).push(
+    //   MaterialPageRoute(
+    //     builder: (_) {
+    //       return CategoryMealsScreen(id, title);
+    //     },
+    //   ),
+    // );
   }
 
   @override
