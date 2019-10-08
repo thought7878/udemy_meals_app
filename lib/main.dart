@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Meals App',
-      home: CategoryScreen(),
+
       theme: ThemeData(
         primarySwatch: Colors.pink,
         // primaryColor: Colors.green,
@@ -33,8 +33,11 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
+      // home: CategoryScreen(),
+      initialRoute: '/',
       routes: {
-        '/category_meals': (context) => CategoryMealsScreen(),
+        '/': (ctx) => CategoryScreen(),
+        CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
       },
     );
   }
