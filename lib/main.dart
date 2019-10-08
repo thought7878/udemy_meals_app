@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:udemy_meals_app/screans/category_screen.dart';
+import './screens/category_screen.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
