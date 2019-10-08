@@ -9,7 +9,10 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(title),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.title,
+      ),
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -20,7 +23,7 @@ class CategoryItem extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius:  BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8),
       ),
     );
   }

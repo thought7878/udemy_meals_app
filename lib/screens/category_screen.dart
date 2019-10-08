@@ -12,6 +12,7 @@ class CategoryScreen extends StatelessWidget {
         elevation: 0.0,
       ),
       body: GridView(
+        padding: EdgeInsets.all(24),
         children: DUMMY_CATEGORIES.map((ctg) {
           return CategoryItem(ctg.title, ctg.color);
         }).toList(),
