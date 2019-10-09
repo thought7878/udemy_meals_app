@@ -55,7 +55,7 @@ class MealItem extends StatelessWidget {
   void tapItem(BuildContext context) {
     Navigator.of(context).pushNamed(
       MealDetailScreen.routeName,
-      arguments: {'id': id, 'title': title},
+      arguments: id,
     );
   }
 
