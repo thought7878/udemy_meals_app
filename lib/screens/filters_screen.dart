@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import '../widgets/main_drawer.dart';
 
-class FiltersScreen extends StatelessWidget {
+class FiltersScreen extends StatefulWidget {
   static const String routeName = '/filters';
+
+  @override
+  _FiltersScreenState createState() => _FiltersScreenState();
+}
+
+class _FiltersScreenState extends State<FiltersScreen> {
+  var _glutenFree = false;
+  var _lactoseFree = false;
+  var _vegan = false;
+  var _vegetarian = false;
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +22,63 @@ class FiltersScreen extends StatelessWidget {
         elevation: 0.0,
       ),
       drawer: MainDrawer(),
+      body: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              'Adjust your chosen food!',
+              style: Theme.of(context).textTheme.title,
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              children: <Widget>[
+                SwitchListTile(
+                  title: Text('Gluten free'),
+                  value: _glutenFree,
+                  subtitle: Text('only gluten food'),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _glutenFree = newValue;
+                    });
+                  },
+                ),
+                SwitchListTile(
+                  title: Text('lactose free'),
+                  value: _lactoseFree,
+                  subtitle: Text('only lactose food'),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _lactoseFree = newValue;
+                    });
+                  },
+                ),
+                SwitchListTile(
+                  title: Text('vegan'),
+                  value: _vegan,
+                  subtitle: Text('only vegan food'),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _vegan = newValue;
+                    });
+                  },
+                ),
+                SwitchListTile(
+                  title: Text('vegetarian'),
+                  value: _vegetarian,
+                  subtitle: Text('only vegetarian food'),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _vegetarian = newValue;
+                    });
+                  },
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
